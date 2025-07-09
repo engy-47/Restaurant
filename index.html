@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <style>
+  :root{--brand-accent:burlywood;--text-light:#fff;--text-muted:#ddd;--bg-dark:#111;}
+  body{background:#000;color:var(--text-light);font-family:"Segoe UI",sans-serif;}
+  img{max-width:100%;height:auto;display:block;}
+
+  /* ---------- NAVBAR ---------- */
+  .navbar-brand img{max-height:60px;}
+  .navbar-nav .nav-link{color:#fff!important;font-size:18px;font-variant:small-caps;transition:color .3s;}
+  .navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:var(--brand-accent)!important;}
+  .dropdown-menu{background:#222;border:none;}
+  .dropdown-item{color:#ddd;}
+  .dropdown-item:hover{background:#333;color:var(--brand-accent);}  
+  .btn-find{border:1px solid var(--brand-accent);color:var(--brand-accent);padding:6px 15px;font-size:15px;border-radius:30px;transition:.3s;}
+  .btn-find:hover{background:var(--brand-accent);color:#111;}
+  @media(max-width:991px){.navbar-nav{background:#111;padding:1rem;}}
+  header, #heroCarousel, .carousel-inner, .carousel-item {width:100%;height:100vh;}
+
+    /* ====== Slide images ====== */
+    .carousel-item {position:relative;}
+    .carousel-item img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+    /* ====== Caption box centred ====== */
+    .carousel-caption {
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      text-align:center;padding:2rem !important;
+      width:100%;max-width:600px;
+    }
+  .carousel-caption .engy {display:flex;flex-direction:column;align-items:center;gap:1.4rem;}
+
+    /* ====== Text + separator ====== */
+    .carousel-caption .sep {display:flex;flex-direction:column;align-items:center;gap:.35rem;}
+    .carousel-caption .sep p {font-size:18px;letter-spacing:2px;color:var(--brand-accent,#ffb03b);
+      margin:0;text-transform:uppercase;
+    }
+
+    /* ====== Headline & sub‑text ====== */
+    .carousel-caption .fla span.emad {
+      font-size:2.8rem;font-weight:800;color:var(--brand-accent,#ffb03b);line-height:1.3;display:block;
+    }
+    .carousel-caption .fla p {font-size:17px;color:#f1f1f1;margin:.5rem 0;}
+
+    /* ====== Button ====== */
+    .carousel-caption .butt a {
+      display:inline-block;padding:12px 30px;border:2px solid var(--brand-accent,#ffb03b);
+      border-radius:30px;color:var(--brand-accent,#ffb03b);font-weight:600;text-decoration:none;
+      transition:.3s ease-in-out;
+    }
+    .carousel-caption .butt a:hover {background:var(--brand-accent,#ffb03b);color:#000;}
+
+    /* ====== Simple fade‑in ====== */
+    @keyframes fadeInSlideUp {0%{opacity:0;transform:translateY(40px);}100%{opacity:1;transform:translateY(0);}}
+    .carousel-caption .engy {animation:fadeInSlideUp 1.2s ease-out both;}
+    .carousel-caption .fla  {animation:fadeInSlideUp 1.4s ease-out both;}
+    .carousel-caption .butt {animation:fadeInSlideUp 1.6s ease-out both;}
+
+    /* ====== Responsive tweaks ====== */
+    @media(max-width:768px){
+      .carousel-caption{padding:1rem;top:55%;}
+      .carousel-caption .fla span.emad{font-size:2rem;}
+      .carousel-caption .fla p,.carousel-caption .sep p{font-size:14px;}
+      .carousel-caption .butt a{padding:10px 22px;font-size:14px;}
+    }
+    @media(max-width:480px){
+      .carousel-caption{top:60%;max-width:90%;}
+      .carousel-caption .fla span.emad{font-size:1.6rem;}
+    }
+
+    /* ========== OUR STORY SECTION ========== */
+    .story{padding:90px 0;background:var(--bg-dark);overflow:hidden;}
+    .story .for p{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--brand-accent);letter-spacing:2px;margin-bottom:4px;}
+    .story .for img{width:clamp(90px,20vw,160px);height:auto;margin:12px 0;}
+    .story .we h2{font-size:40px;font-weight:700;line-height:1.3;margin-bottom:22px;}
+    .story .we p{color:var(--text-muted);font-size:16px;line-height:1.7;margin-bottom:28px;}
+    .story .we h4{font-size:18px;font-weight:700;color:var(--brand-accent);margin-bottom:18px;}
+
+    /* Images */
+    .story .images-wrap{position:relative;max-width:540px;margin-left:auto;}
+    .story .img1 img,.story .img2 img{border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.45);}
+    .story .img1 img{width:100%;}
+    .story .img2{position:absolute;top:85%;left:15%;transform:translate(-50%,-50%);width:36%;}
+    .story .img2 img{width:100%;}
+    .story .badge-main{position:absolute;top:4%;right:3%;z-index:3;width:clamp(70px,14vw,130px);}
+    .story .badge-bg{position:absolute;top:2%;right:0;z-index:2;width:clamp(110px,20vw,200px);opacity:.2;}
+
+    /* RESPONSIVE */
+    @media(max-width:992px){
+      .story .img2{width:50%;top:88%;left:20%;}
+    }
+    @media(max-width:768px){
+      .story{padding:60px 0;text-align:center;}
+      .story .images-wrap{margin:40px auto 0;max-width:400px;}
+      .story .img2{width:60%;top:82%;left:50%;transform:translate(-50%,-50%);}
+      .story .badge-main{top:-10px;right:-10px;width:80px;}
+      .story .badge-bg{top:0;right:-5px;width:120px;}
+      .story .we h2{font-size:32px;}
+    }
+    @media(max-width:576px){
+      .story .images-wrap{max-width:320px;}
+      .story .img2{width:65%;top:80%;left:50%;}
+      .story .badge-main{width:70px;}
+      .story .badge-bg{width:100px;}
+      .story .we h2{font-size:28px;}
+    }
+  /* ---------- MENU SHOWCASE ---------- */
+  .menu{padding:90px 0;background:var(--bg-dark);} 
+  .menu h4{font-size:26px;color:var(--brand-accent);margin-bottom:10px;}
+  .menu a.btn-find{padding:8px 18px;font-size:13px;}
+  .rounded-3{margin-bottom: 1.5rem !important;}
+  @media(max-width:768px){.menu{padding:60px 0;text-align:center;}}
+  </style>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container"><a class="navbar-brand" href="#"><img src="logo.svg" alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Menu</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#Menu">All Menu</a></li>
+              <li><a class="dropdown-item" href="breakfast.html">Appetizers</a></li>
+              <li><a class="dropdown-item" href="food.html">Food</a></li>
+              <li><a class="dropdown-item" href="drink1.html">Drinks</a></li>
+              <li><a class="dropdown-item" href="delicious1.html">Special</a></li>
+              <li><a class="dropdown-item" href="special.html">Dish of the day</a></li>
+
+            </ul></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="review1.html">Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-find ms-lg-2" href="contact.html">Find Table</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header id="home">
+    <div id="heroCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active" data-bs-interval="7000">
+          <img src="hero-slider-1.jpg" alt="Fresh seasonal dishes" />
+          <div class="carousel-caption d-block">
+            <div class="engy">
+              <div class="sep">
+                <p>DELIGHTFUL EXPERIENCE</p>
+              </div>
+              <div class="fla">
+                <p><span class="emad">Flavors Inspired by<br />the Seasons</span></p>
+                <p>Come with family &amp; feel the joy of mouth‑watering food</p>
+                <div class="butt"><a href="menu.html">VIEW OUR MENU</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" data-bs-interval="7000">
+          <img src="hero-slider-2.jpg" alt="Delicious food" />
+          <div class="carousel-caption d-block">
+            <div class="engy">
+              <div class="sep">
+                <p>DELIGHTFUL EXPERIENCE</p>
+              </div>
+              <div class="fla">
+                <p><span class="emad">For the Love of<br />Delicious Food</span></p>
+                <p>Come with family &amp; feel the joy of mouth‑watering food</p>
+                <div class="butt"><a href="menu.html">VIEW OUR MENU</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" data-bs-interval="7000">
+          <img src="hero-slider-3.jpg" alt="Flavor story" />
+          <div class="carousel-caption d-block">
+            <div class="engy">
+              <div class="sep">
+                <p>DELIGHTFUL EXPERIENCE</p>
+              </div>
+              <div class="fla">
+                <p><span class="emad">Where Every Flavor<br />Tells a Story</span></p>
+                <p>Come with family &amp; feel the joy of mouth‑watering food</p>
+                <div class="butt"><a href="menu.html">VIEW OUR MENU</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </header>
+
+<!-- ========== OUR STORY SECTION ========== -->
+<section class="story" id="story" data-aos="fade-up">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text side -->
+      <div class="col-md-6 mb-5 mb-md-0">
+        <div class="for">
+          <p>OUR STORY</p>
+        </div>
+        <div class="we">
+          <h2>Every Fla Vor<br/>Tells a Story</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quibusdam nisi similique dolores recusandae nesciunt molestiae at quasi consequuntur corrupti voluptatibus aperiam magnam, delectus inventore? Quas dolore adipisci porro! Tempora atque neque, perferendis recusandae praesentium id accusamus voluptatem culpa officia!</p>
+          <h4>Book Through Call</h4>
+          <img src="shape-3.png" alt="phone shape">
+        </div>
+      </div>
+
+      <!-- Images side -->
+      <div class="col-md-6">
+        <div class="images-wrap">
+          <div class="img1">
+            <img src="about-banner.jpg" class="img-fluid" alt="Dining room">
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== MENU SHOWCASE ===== -->
+  <section class="menu" data-aos="fade-up" id="Menu">
+    <div class="container"><div class="row g-4">
+      <p class="text-center fw-bold mb-1" style="letter-spacing:2px;color:var(--brand-accent)">FLAVORS FOR ROYALTY</p>
+      <div class="col-md-4 col-sm-6"><figure class="mb-4"><img class="rounded-3" src="service-1.jpg" alt="Food"></figure><h4 class="text-center">Food</h4><div class="text-center"><a href="food.html" class="btn btn-find">View Menu</a></div></div>
+      <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200"><figure class="mb-4"><img class="rounded-3" src="service-2.jpg" alt="Appetizers"></figure><h4 class="text-center">Appetizers</h4><div class="text-center"><a href="breakfast.html" class="btn btn-find">View Menu</a></div></div>
+      <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400"><figure class="mb-4"><img class="rounded-3" src="service-3.jpg" alt="Drinks"></figure><h4 class="text-center">Drinks</h4><div class="text-center"><a href="drink1.html" class="btn btn-find">View Menu</a></div></div>
+    </div></div>
+  </section>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // restart animate.css on each slide
+    document.querySelector('#heroCarousel').addEventListener('slid.bs.carousel',()=>{
+      document.querySelectorAll('#heroCarousel .animate__animated').forEach(el=>{el.classList.remove('animate__animated');void el.offsetWidth;el.classList.add('animate__animated');});
+    });
+    AOS.init({duration:1000,once:true});
+    document.addEventListener("DOMContentLoaded", function () {
+    // Add smooth scroll for internal anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+
+    // Custom JS to manage nav active state on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  });
+  </script>
+</body>
+</html>
+
+

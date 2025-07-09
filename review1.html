@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Client Say</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+  :root{--brand-accent:#d9b27c;--bg-dark:#000;--text-light:#fff;--card-bg:#2a2929;--card-border:#454545;--star:#d0a300;}
+
+  body{background:url("hero-slider-2.jpg") center/cover no-repeat fixed;color:var(--text-light);font-family:"Poppins",sans-serif;padding-top:90px;}
+  img{max-width:100%;height:auto;display:block;}
+  a{text-decoration:none;}
+
+  /* ---------- NAVBAR ---------- */
+  .navbar-brand img{max-height:60px;}
+  .navbar-nav .nav-link{color:#fff!important;font-size:18px;font-variant:small-caps;transition:color .3s;}
+  .navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:var(--brand-accent)!important;}
+  .dropdown-menu{background:#222;border:none;}
+  .dropdown-item{color:#ddd;}
+  .dropdown-item:hover{background:#333;color:var(--brand-accent);} 
+  .btn-find{border:1px solid var(--brand-accent);color:var(--brand-accent);padding:6px 15px;font-size:15px;border-radius:30px;transition:.3s;}
+  .btn-find:hover{background:var(--brand-accent);color:#111;}
+  @media(max-width:991px){.navbar-nav{background:#111;padding:1rem;}}
+
+  /* ---------- SECTION ---------- */
+  .section-title{text-align:center;margin-top:3rem;margin-bottom:2.5rem;}
+  .section-title img{width:90px;}
+
+  /* ---------- REVIEW CARDS ---------- */
+  .review-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:.5rem;transition:transform .35s;min-height:100%;}
+  .review-card:hover{transform:translateY(-6px);}  
+  .review-card img{width: 81px;height: 80px;object-fit: cover;border-radius: 50%;background: var(--card-bg);margin-top: -10px;border: 4px solid var(--card-bg);}
+  .review-card .card-body{color:var(--text-light);}
+  .star-rating .fa-star,.star-rating .fa-star-half-alt{color:var(--star);}  
+
+  /* ---------- CAROUSEL ARROWS ---------- */
+  .carousel-control-prev-icon,.carousel-control-next-icon{filter:invert(90%) sepia(14%) saturate(7351%) hue-rotate(9deg) brightness(108%) contrast(103%);width:2.5rem;height:2.5rem;}
+
+  /* ---------- SPACING ---------- */
+  #reviews{padding-bottom:90px;}
+  </style>
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container"><a class="navbar-brand" href="index.html"><img src="logo.svg" alt="Grilli logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Menu</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="menu.html">All Menu</a></li>
+              <li><a class="dropdown-item" href="breakfast.html">Appetizers</a></li>
+              <li><a class="dropdown-item" href="food.html">Food</a></li>
+              <li><a class="dropdown-item" href="drink1.html">Drinks</a></li>
+              <li><a class="dropdown-item" href="delicious1.html">Special</a></li>
+              <li><a class="dropdown-item" href="special.html">Dish of the day</a></li>
+            </ul></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="review1.html">Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item d-lg-flex align-items-lg-center"><a class="btn btn-find ms-lg-2" href="contact.html">Find Table</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews">
+    <div class="section-title">
+      <h2 class="fs-4 text-uppercase fw-light">Our Client Say</h2>
+    </div>
+
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-inner">
+
+        <!-- === Slide 1 === -->
+        <div class="carousel-item active">
+          <div class="container"><div class="row g-4 justify-content-center">
+
+            <!-- Card 1 -->
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+              <div class="card review-card text-center p-4 pb-5">
+                <img src="download (11).jpeg" alt="Engy" class="mx-auto">
+                <div class="card-body mt-2">
+                  <h5 class="card-title mb-1">Engy</h5>
+                  <div class="star-rating mb-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-regular fa-star"></i></div>
+                  <p class="card-text">Everything was perfect – delicious food, friendly staff, and cozy atmosphere!</p>
+                </div></div></div>
+
+            <!-- Card 2 -->
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+              <div class="card review-card text-center p-4 pb-5">
+                <img src="images (13).jpeg" alt="Mary" class="mx-auto">
+                <div class="card-body mt-2">
+                  <h5 class="card-title mb-1">Mary</h5>
+                  <div class="star-rating mb-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-regular fa-star"></i></div>
+                  <p class="card-text">I loved their seafood pasta. Highly recommend this place!</p>
+                </div></div></div>
+
+            <!-- Card 3 -->
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+              <div class="card review-card text-center p-4 pb-5">
+                <img src="download (10).jpeg" alt="Karas" class="mx-auto">
+                <div class="card-body mt-2">
+                  <h5 class="card-title mb-1">Karas</h5>
+                  <div class="star-rating mb-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-regular fa-star"></i></div>
+                  <p class="card-text">Great ambience and the desserts are to die for!</p>
+                </div></div></div>
+
+          </div></div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="container"><div class="row g-4 justify-content-center">
+            <!-- Card 4 -->
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+              <div class="card review-card text-center p-4 pb-5">
+                <img src="images (7).jpeg" alt="Alex" class="mx-auto">
+                <div class="card-body mt-2">
+                  <h5 class="card-title mb-1">Alex</h5>
+                  <div class="star-rating mb-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i><i class="fa-regular fa-star"></i></div>
+                  <p class="card-text">Friendly service and tasty vegan options – will come back for sure.</p>
+                </div></div></div>
+          </div></div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></button>
+    </div>
+  </section>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const reviewCarousel=document.querySelector('#reviewCarousel');
+    new bootstrap.Carousel(reviewCarousel,{interval:6000,pause:'hover',touch:true});
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --brand-accent: #d9b27c;
+      --bg-dark: #000;
+      --text-light: #fff;
+     
+    }
+
+    /* ---------- GLOBAL ---------- */
+    body {
+      background-image: url(testimonial-bg.jpg);color: var(--text-light);font-family: "Poppins", sans-serif;padding-top: 90px; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; }
+
+    /* ---------- NAVBAR ---------- */
+    
+    .navbar-brand img { max-height: 60px; }
+    .navbar-nav .nav-link {color: #fff !important;font-size: 18px;font-variant: small-caps;transition: color 0.3s;}
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active { color: var(--brand-accent) !important; }
+    .dropdown-menu { background: #222; border: none; }
+    .dropdown-item { color: #ddd; }
+    .dropdown-item:hover { background: #333; color: var(--brand-accent); }
+
+    .btn-find {border: 1px solid var(--brand-accent);color: var(--brand-accent);padding: 6px 15px;font-size: 15px;border-radius: 30px;transition: 0.3s;}
+    .btn-find:hover { background: var(--brand-accent); color: #111; }
+
+    @media (max-width: 991px) {.navbar-nav { background: #111; padding: 1rem; }}
+
+    /* ---------- RESERVATION FORM ---------- */
+    .contact-form {background: #1d1d1d;border: 1px solid #343434;}
+    .contact-form .form-control,
+    .contact-form .form-select {background: #2e2e2e;color: var(--text-light);border: 1px solid #444;}
+    .contact-form .form-control:focus,
+    .contact-form .form-select:focus {box-shadow: none;border-color: var(--brand-accent);}
+    .my-5{padding-bottom: 118px !important;}
+
+    /* ---------- FOOTER ---------- */
+    .footer-section {background: var(--bg-dark)}
+    .text{color: var(--brand-accent);}
+    .footer-link {color: var(--text-light);transition: color 0.3s;}
+    .footer-link:hover { color: var(--brand-accent); }
+  </style>
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="logo.svg" alt="Grilli logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav gap-lg-3">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Menu</a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="menu.html">All Menu</a></li>
+              <li><a class="dropdown-item" href="breakfast.html">Appetizers</a></li>
+              <li><a class="dropdown-item" href="food.html">Food</a></li>
+              <li><a class="dropdown-item" href="drink1.html">Drinks</a></li>
+              <li><a class="dropdown-item" href="delicious1.html">Special</a></li>
+              <li><a class="dropdown-item" href="special.html">Dish of the day</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="review1.html">Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item d-lg-flex align-items-lg-center">
+            <a class="btn btn-find ms-lg-2" href="contact.html">Find&nbsp;Table</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== RESERVATION FORM ===== -->
+  <section class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="contact-form text-white p-4 rounded">
+          <h1 class="mb-3 text-center">Online Reservation</h1>
+          <p class="text-center mb-4">Booking request <span class="text">+88‑123‑12345</span> or fill out the order form</p>
+
+          <form class="row g-3">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Your Name</label>
+    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+  </div>
+  <div class="col-md-6">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+  </div>
+  <div class="col-md-4">
+    <label for="persons" class="form-label">Number of Persons</label>
+    <select id="persons" class="form-select" required>
+      <option selected disabled>Person</option>
+      <option>1 Person</option>
+      <option>2 Person</option>
+      <option>3 Person</option>
+      <option>4 Person</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" id="date" class="form-control" required>
+  </div>
+  <div class="col-md-4">
+    <label for="time" class="form-label">Time</label>
+    <input type="time" id="time" class="form-control" required>
+  </div>
+  <div class="col-12">
+    <label for="message" class="form-label">Message</label>
+    <textarea id="message" class="form-control" placeholder="Message" rows="4"></textarea>
+  </div>
+  <div class="col-12 text-center">
+    <button class="btn btn-find px-5">Book a Table</button>
+  </div>
+</form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-section text-white py-5">
+    <div class="container">
+      <div class="row text-center text-md-start gy-4">
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="menu.html" class="footer-link">Menu</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="review1.html" class="footer-link">Review</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <p>Restaurant St, Delicious City London 9578, UK</p>
+          <p><a href="mailto:booking@grilli.com" class="footer-link">booking@grilli.com</a></p>
+          <p>Request: +88‑123‑123456</p>
+          <p>Open 9:00am – 01:00pm</p>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your Email" required>
+            <button class="btn btn-outline-warning">Subscribe</button>
+          </form>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="footer-link">Facebook</a></li>
+            <li><a href="#" class="footer-link">Instagram</a></li>
+            <li><a href="#" class="footer-link">Twitter</a></li>
+            <li><a href="#" class="footer-link">YouTube</a></li>
+            <li><a href="#" class="footer-link">Google Map</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const dateInput = document.querySelector('input[type="date"]');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+}
+const form = document.querySelector('.contact-form form');
+if (form) {
+  const toastContainer = document.createElement('div');
+  toastContainer.className = 'position-fixed top-0 end-0 p-3';
+  toastContainer.style.zIndex = 1080; 
+  document.body.appendChild(toastContainer);
+
+  const toastEl = document.createElement('div');
+  toastEl.className = 'toast align-items-center text-bg-success border-0';
+  toastEl.setAttribute('role', 'alert');
+  toastEl.innerHTML = `
+    <div class="d-flex">
+      <div class="toast-body">
+        Reservation request sent! We’ll contact you soon.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>`;
+  toastContainer.appendChild(toastEl);
+  const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    toast.show();
+    form.reset();
+  });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const targetID = link.getAttribute('href').slice(1);
+    const targetEl = document.getElementById(targetID);
+    if (targetEl) {
+      e.preventDefault();
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+</script>
+</body>
+</html>
